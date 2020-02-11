@@ -1,5 +1,5 @@
 // Add DOM selectors to target input and UL movie list
-var inp = document.querySelector("input");
+var input = document.querySelector("input");
 var myMovieList = document.querySelector("ul");
 
 // Added movieHistory **1
@@ -18,7 +18,7 @@ if(localStorage.getItem("myMovies")) {
 
 // Example of a simple function that clears the input after a user types something in
 function clearInput() {
-    inp.value = "";
+    input.value = "";
 }
 
 function clearMovies() {
@@ -28,6 +28,7 @@ function clearMovies() {
 
 function updateMovieHistory(movie) {
 
+    // Creates a table that tracks the number of times each movie was viewed.
     var myTable= `
     <h5 class="card-title">Movie History</h5>
     <table id="movieHistoryTable">
@@ -56,7 +57,7 @@ function keyExists(value, obj) {
 // This function is executed when the user clicks [ADD MOVIE] button.
 function addMovie() {
     // Step 1: Get value of input
-    var userTypedText = inp.value;
+    var userTypedText = input.value;
 
     var keyFound = keyExists(userTypedText, myMovies);
 
